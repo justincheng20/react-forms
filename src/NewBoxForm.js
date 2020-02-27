@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 function NewBoxForm({ addBox }) {
-    const INITIAL_STATE = { width: 0, height: 0, backgroundColor: "" };
+    const INITIAL_STATE = { width: "", height: "", backgroundColor: "" };
     const [formData, setFormData] = useState(INITIAL_STATE);
 
 
@@ -20,8 +20,8 @@ function NewBoxForm({ addBox }) {
     };
 
     return (
-        <form onSubmit={handleSubmit}>
-            <label htmlFor="width">Width:</label>
+        <form data-testid="NewBoxForm" onSubmit={handleSubmit}>
+            <label htmlFor="width">Width: </label>
             <input
                 type="number"
                 id="width"
@@ -30,7 +30,7 @@ function NewBoxForm({ addBox }) {
                 onChange={handleChange}
             />
 
-            <label htmlFor="height">Height:</label>
+            <label htmlFor="height">Height: </label>
             <input
                 type="number"
                 id="height"
@@ -39,7 +39,7 @@ function NewBoxForm({ addBox }) {
                 onChange={handleChange}
             />
 
-            <label htmlFor="backgroundColor">Background Color:</label>
+            <label htmlFor="backgroundColor">Background Color: </label>
             <input
                 id="backgroundColor"
                 name="backgroundColor"
