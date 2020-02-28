@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 
-function NewtoDoForm({ addToDo }) {
+function NewToDoForm({ toDoFunction, buttonText }) {
     const INITIAL_STATE = { text: "" };
     const [formData, setFormData] = useState(INITIAL_STATE);
 
 
     const handleSubmit = evt => {
         evt.preventDefault();
-        addToDo(formData);
+        toDoFunction(formData);
         setFormData(INITIAL_STATE);
     };
 
@@ -26,12 +26,12 @@ function NewtoDoForm({ addToDo }) {
                 type="text"
                 id="text"
                 name="text"
-                value={formData.toDo}
+                value={formData.text}
                 onChange={handleChange}
             />
-            <button>Add a new toDo!</button>
+            <button>{buttonText}</button>
         </form>
     )
 };
 
-export default NewtoDoForm;
+export default NewToDoForm;

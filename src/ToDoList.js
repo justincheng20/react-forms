@@ -30,7 +30,7 @@ function ToDoList() {
     )
   };
 
-  return (<div>{makeHTMLtoDos()} <NewToDoForm addToDo={addToDo} /> </div>)
+  return (<div>{makeHTMLtoDos()} <NewToDoForm toDoFunction={addToDo} buttonText = "Add to do"/> </div>)
 }
 
 export default ToDoList;
