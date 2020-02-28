@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent } from '@testing-library/react';
+import { render, fireEvent, queryByTestId } from '@testing-library/react';
 import BoxList from './BoxList';
 
 test('renders without crashing', () => {
@@ -12,7 +12,7 @@ test("matches snapshot", function () {
 })
 
 test("can add a new box", function () {
-  const { getByLabelText, getByText, queryByText } = render(<BoxList />);
+  const { getByLabelText, getByText, queryByText, queryByTestId } = render(<BoxList />);
 
   // no boxes displayed yet
   expect(queryByText("X")).not.toBeInTheDocument();
@@ -31,6 +31,11 @@ test("can add a new box", function () {
 
   // new box exists
   expect(queryByText("X")).toBeInTheDocument();
+
+  // Might want to check values of new box
+  // const box = queryByTestId("box");
+  // console.log(box)
+  // expect(box.previousSibling).toHaveStyle(`width : 200`);
 })
 
 test("can delete a box", function () {

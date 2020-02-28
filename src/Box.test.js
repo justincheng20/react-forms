@@ -9,4 +9,4 @@ test('renders without crashing', () => {
 test("matches snapshot", function () {
   const { asFragment } = render(<Box />);
   expect(asFragment()).toMatchSnapshot();
-})
+});
